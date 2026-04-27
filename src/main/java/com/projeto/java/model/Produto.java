@@ -1,7 +1,9 @@
 package com.projeto.java.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
+@Data
 @Entity
 public class Produto {
 
@@ -12,5 +14,7 @@ public class Produto {
     private String nome;
     private Double preco;
 
-    // getters e setters
+    @ManyToOne
+    @JoinColumn(name = "categoria_id")
+    private Categoria categoria;
 }
