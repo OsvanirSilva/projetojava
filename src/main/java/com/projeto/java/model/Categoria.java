@@ -1,4 +1,4 @@
-package com.projeto.java.entity;
+package com.projeto.java.model;
 
 import java.util.List;
 
