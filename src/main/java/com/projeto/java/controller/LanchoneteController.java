@@ -28,4 +28,8 @@ public class LanchoneteController {
         return produtoRepository.saveAll(attProduto); //JSON com ID do produto para atualizacao
     }
 
+    @DeleteMapping
+    public void delProduto(@RequestBody List<Long> delProdutoId){
+        produtoRepository.deleteAllById(delProdutoId);
+    }
 }
