@@ -2,9 +2,8 @@ package com.projeto.java.controller;
 import com.projeto.java.model.Produto;
 import com.projeto.java.model.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 @RestController
@@ -19,5 +18,18 @@ public class LanchoneteController {
         return produtoRepository.findAll(); // O JPA busca tudo no banco e converte em JSON
     }
 
+    @PostMapping
+    public List<Produto> addProduto(@RequestBody List<Produto> novoProduto){
+        return produtoRepository.saveAll(novoProduto); //JSON com [] obrigatorio (lista) sem ID produto (gerado automaticamente)
+    }
 
+    @PutMapping
+    public List<Produto> editProduto(@RequestBody List<Produto> attProduto){
+        return produtoRepository.saveAll(attProduto); //JSON com ID do produto para atualizacao
+    }
+
+    @DeleteMapping
+    public void delProduto(@RequestBody List<Long> delProdutoId){
+        produtoRepository.deleteAllById(delProdutoId);
+    }
 }
