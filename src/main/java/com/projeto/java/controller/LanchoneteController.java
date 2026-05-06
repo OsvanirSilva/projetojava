@@ -20,7 +20,12 @@ public class LanchoneteController {
 
     @PostMapping
     public List<Produto> addProduto(@RequestBody List<Produto> novoProduto){
-        return produtoRepository.saveAll(novoProduto); //JSON com [] obrigatório (lista)
+        return produtoRepository.saveAll(novoProduto); //JSON com [] obrigatorio (lista) sem ID produto (gerado automaticamente)
+    }
+
+    @PutMapping
+    public List<Produto> editProduto(@RequestBody List<Produto> attProduto){
+        return produtoRepository.saveAll(attProduto); //JSON com ID do produto para atualizacao
     }
 
 }
