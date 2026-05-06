@@ -1,6 +1,6 @@
 package com.projeto.java.controller;
 import com.projeto.java.model.Produto;
-import com.projeto.java.model.ProdutoRepository;
+import com.projeto.java.repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,7 +8,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/produtos")
-public class LanchoneteController {
+public class ProdutoController {
 
     @Autowired
     private ProdutoRepository produtoRepository;

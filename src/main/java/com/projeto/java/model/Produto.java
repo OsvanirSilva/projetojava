@@ -13,7 +13,7 @@ public class Produto {
     private String nome;
     private Double preco;
 
-//    @ManyToOne
-//    @JoinColumn(name = "categoria_id")
-//    private Categoria categoria;
+    @ManyToOne
+    @JoinColumn(name = "categoria_id")
+    private Categoria categoria;
 }
